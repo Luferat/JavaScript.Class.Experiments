@@ -1,41 +1,39 @@
-<script>
+<script type="module">
 
-    "use strict"
+    // Importa a classe 'Animal'.
+    import { Animal } from './Animal.class.js'
 
-    class Animal {
+    // Importa a classe 'Mamifero'.
+    import { Mamifero } from './Mamifero.class.js'
 
-        #nome = ''
-        #especie = ''
-        #familia
-        #nascimento
-        #metrica = {}
+    // Importa a classe 'Artropodes'.
+    import { Artropode } from './Artropode.class.js'
 
-        constructor(nome, especie) {
-            this.#nome = nome
-            this.#especie = especie
-            document.write('Criando um bicho chamado ' + this.#nome + '<br>')
-        }
-
-        alimentacao() { }
-        vacinar() { }
-
-        get nome() {
-            return this.#nome
-        }
-
-        set nome(nomea) {
-            this.#nome = nomea.trim()
-        }
-
-    }
-
+    // Instândia de Animal
     var foca = new Animal('Fofinha', 'mamífero')
+
+    // Lê um atributo pelo get.
     console.log(foca.nome)
+
+    // Escreve em um atributo pelo get.
     foca.nome = 'Maria'
+
+    // Lê o atributo pelo get novamente.
     console.log(foca.nome)
+
+    // Lê o objeto completo.
     console.log(foca)
 
-    //var formiga = new Animal('Miguinha', 'Artropode')
-    // console.log(formiga)
+    // A classe 'Animal' é a classe 'pai'.
+    var formiga = new Animal('Miguinha', 'Artropode')
+    console.log(formiga)
+
+    // A classe 'Mamifero' herda a classe 'Animal' e a extende.
+    var mimosa = new Mamifero('Mimosa', 'vaca', 'verde')
+    console.log(mimosa)
+
+    // A classe 'Artropode' herda a classe 'Animal' e a extende.
+    var curupira = new Artropode('Curupira', 'aranha', 8, 0)
+    console.log(curupira)
 
 </script>
